@@ -8,7 +8,7 @@ package edu.uqu.cs;
 * Make sure to complete and submit your lab
 */
 
-
+  import java.util.Scanner;
 public class App{
 
 /**  
@@ -21,7 +21,7 @@ public class App{
 * 
 * Output: 
 *        1 Tweetle 3 TweetleBeetle 5 TweetlePoodle 7 TweetleBeetle 9 Tweetle 11
-*        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle 
+*        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle
 */
 
 /**
@@ -42,16 +42,96 @@ public class App{
 * Output: 2255464228626
 *
 */
+public static  void phoneKeypad (String str){
+    String  num = "";
+    
+       str= str.toUpperCase();
+     for(int i=0; i<=str.length()-1 ; i++) {
+     switch (str.charAt(i)) {
+          case 'A':
+          case 'B':
+          case 'C':
+          num += "2";
+           
+          break;
+          case 'D':
+          case  'E' :
+          case 'F' :
+          num+="3";
+
+          break;
+          case 'G':
+          case 'H' :
+          case 'I' :
+           num+= "4";
+          break;
+          case 'J':
+          case 'K':
+          case 'L':
+           num+="5";
+          break;
+          case 'M':
+          case 'N':
+          case 'O':
+           num+="6";
+          break;
+          case 'P':
+           case  'Q':
+            case 'R':
+           case  'S' :
+            num+="7";
+          break;
+          case  'T' :
+          case 'U':
+          case  'V': 
+          num+="8";
+          break;
+          case 'W':
+           case'X':
+           case 'Y':
+           case'Z': 
+        num+="9";
+          break;
+         
+
+     }
+     }
+     System.out.println(num);
+}
+public static void twisters() {
+    for(int i=1; i<=110;i++){
+      if(i%2==0){
+       System.out.print("Tweetle");
+       if(i%4==0){
+        System.out.print("Beetle");
+       }
+       if(i%6==0){
+         System.out.print("Poodle");
+       }
+      }
+      else { System.out.print(" " + i +" ");
+
+      }
+       
+    }
+
+}
  
     public static void main(String [] args) {
         
+    
 
         /* Write your code here */
+
      
        //call method twisters()
+       twisters();
        //prompt user to enter a string 
+       Scanner scn= new  Scanner(System.in);
+       System.out.print("Enter a String");
        //call method phoneKeypad(string)
-
+           phoneKeypad(scn.nextLine());
+           scn.close();
 
     }
 
